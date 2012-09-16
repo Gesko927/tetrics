@@ -11,7 +11,6 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -137,7 +136,6 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	private void removeFullLines() {
-		Log.e("REMOVE LINES", "begin");
 		for (int row = 0; row < ROWS; row++) {
 			boolean lineFull = true;
 
@@ -149,7 +147,6 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 
 			if (lineFull) {
-				Log.e("REMOVE LINES", "LINE FULL");
 				for (int k = row; k < ROWS - 1; k++) {
 					for (int column = 0; column < COLUMNS; column++) {
 						boardBlocks[k][column] = boardBlocks[k + 1][column];
@@ -303,12 +300,8 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 		for (int row = 0; row < ROWS; row++) {
 			for (int column = 0; column < COLUMNS; column++) {
 				if (boardBlocksFull[row][column] == true) {
-					try {
-						canvas.drawBitmap(boardBlocks[row][column].getBitmap(), column * blockWidth, gameHeight - row
-								* blockHeight - blockHeight, paint);
-					} catch (NullPointerException exception) {
-						Log.e("NullPointerException", row + " ," + column);
-					}
+					canvas.drawBitmap(boardBlocks[row][column].getBitmap(), column * blockWidth, gameHeight - row
+							* blockHeight - blockHeight, paint);
 				}
 			}
 		}
@@ -376,7 +369,6 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	public void fling(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-		Log.d("ASD", "onFling");
 		if (distanceX > MOVEMENT_THRESHOLD) {
 			moveShapeRight();
 		}
