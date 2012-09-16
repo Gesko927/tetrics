@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <RelativeLayout
+        android:id="@+id/menu_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <ImageButton
+            android:id="@+id/menu_newgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/menu_item_margin_bottom"
+            android:background="@android:color/transparent"
+            android:src="@drawable/newgame" />
+
+        <ImageButton
+            android:id="@+id/menu_highscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu_newgame"
+            android:layout_marginBottom="@dimen/menu_item_margin_bottom"
+            android:background="@android:color/transparent"
+            android:src="@drawable/highscore" />
+
+        <ImageButton
+            android:id="@+id/menu_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu_highscore"
+            android:layout_marginBottom="@dimen/menu_item_margin_bottom"
+            android:background="@android:color/transparent"
+            android:src="@drawable/quit" />
+    </RelativeLayout>
+
+</RelativeLayout>
