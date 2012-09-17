@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <RelativeLayout
+        android:id="@+id/center_container"
+        android:layout_width="@dimen/highscore_center_container_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <TextView
+            android:id="@+id/highscore_level_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/highscore_level"
+            android:textSize="@dimen/highscore_text_size" />
+
+        <TextView
+            android:id="@+id/highscore_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/none"
+            android:textSize="@dimen/highscore_text_size" />
+
+        <TextView
+            android:id="@+id/highscore_lines_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/highscore_level_label"
+            android:text="@string/highscore_lines"
+            android:textSize="@dimen/highscore_text_size" />
+
+        <TextView
+            android:id="@+id/highscore_lines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/highscore_level"
+            android:text="@string/none"
+            android:textSize="@dimen/highscore_text_size" />
+    </RelativeLayout>
+
+</RelativeLayout>
