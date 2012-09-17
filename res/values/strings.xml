@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Tetrics</string>
+    <string name="highscore_level">Level:</string>
+    <string name="highscore_lines">Lines:</string>
+    <string name="none">n/a</string>
+
 </resources>

@@ -16,7 +16,9 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.jovann.tetrics.R;
+import com.jovann.tetrics.misc.HighscoreManager;
 import com.jovann.tetrics.model.Block;
+import com.jovann.tetrics.model.Score;
 import com.jovann.tetrics.model.Shape;
 
 public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
@@ -118,21 +120,15 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 		}
 	}
 
-	private void printBoard() {
-		for (int row = ROWS - 1; row >= 0; row--) {
-			StringBuilder rowString = new StringBuilder();
-			for (int column = 0; column < COLUMNS; column++) {
-				rowString.append("").append(boardBlocksFull[row][column] == true ? "1" : "0").append(" ");
-			}
-		}
-	}
-
 	private void endGame() {
 		movementHandler.removeCallbacks(movementTask);
 		gameOver = true;
-		printBoard();
+		
+		Score newScore = new Score(lines, level);
+		HighscoreManager.checkNewScore(getContext(), newScore);
+		
 		thread.setRunning(false);
-		thread.stop();
+//		thread.stop();
 	}
 
 	private void removeFullLines() {
@@ -254,8 +250,9 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
 		drawShape(canvas);
 		drawBlocks(canvas);
 
-		if (gameOver)
+		if (gameOver) {
 			drawGameoverMessage(canvas);
+		}
 	}
 
 	private void drawBackground(Canvas canvas) {

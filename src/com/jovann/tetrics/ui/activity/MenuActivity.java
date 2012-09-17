@@ -35,7 +35,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.menu_highscore:
-
+			startActivity(new Intent(this, HighscoreActivity.class));
 			break;
 
 		case R.id.menu_quit:
